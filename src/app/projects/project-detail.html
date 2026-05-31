@@ -1,0 +1,35 @@
+<div class="project-detail-container" *ngIf="state$ | async as state">
+  <a routerLink="/projects" class="back-link">Retour aux projets</a>
+
+  <div *ngIf="state.loading" class="loading">Chargement du projet...</div>
+  <div *ngIf="state.error" class="error">{{ state.error }}</div>
+
+  <div *ngIf="!state.loading && !state.error && state.project" class="project-detail">
+    <h1>{{ state.project.title }}</h1>
+
+    <img *ngIf="state.project.screenshotLink" [src]="state.project.screenshotLink" alt="{{ state.project.title }}"
+      class="project-image">
+
+    <div class="project-content">
+      @if (state.project.technologies?.length) {
+      <div class="project-tech">
+        <h2>Technologies</h2>
+        <ul class="tech-list">
+          @for (technology of state.project.technologies; track technology) {
+          <li>{{ technology }}</li>
+          }
+        </ul>
+      </div>
+      }
+
+      <h2>Description</h2>
+      <p>{{ state.project.description }}</p>
+
+      <div *ngIf="state.project.gitLink" class="project-links">
+        <a *ngIf="state.project.gitLink" [href]="state.project.gitLink" target="_blank" class="btn btn-primary">
+          Voir sur GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

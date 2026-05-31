@@ -1,0 +1,42 @@
+<div class="home-container">
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Bonjour, je suis <span class="typewriter">{{ displayedText }}<span class="cursor" *ngIf="!isTypewriterDone"></span></span>
+      </h1>
+      <h2 class="hero-subtitle">Informaticien / Développeur</h2>
+      <p class="intro">
+        Passionné par l'informatique et les nouvelles technologies.
+        Découvrez ici mon parcours, mes compétences et les projets sur lesquels j'ai travaillé.
+      </p>
+      <a href="#projects" class="cta-button">Voir mes projets</a>
+    </div>
+    <div class="hero-decoration">
+      <div class="code-block">
+        <div class="code-line"><span class="keyword">const</span> <span class="variable">developer</span> = <span class="string">"passionate"</span>;</div>
+        <div class="code-line"><span class="keyword">function</span> <span class="function">createPortfolio</span>() {{ '{' }} ... {{ '}' }}</div>
+        <div class="code-line"><span class="keyword">return</span> <span class="string">"amazing projects"</span>;</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="timeline-section">
+    <h2 class="section-title">Mon Parcours</h2>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let item of parcours; let last = last" [class.last]="last">
+        <div class="timeline-marker">
+          <span class="marker-icon">{{ item.icon }}</span>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-date">
+            <span class="year">{{ item.year }}</span>
+            <span class="separator">→</span>
+            <span class="year">{{ item.end }}</span>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p class="location">{{ item.location }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

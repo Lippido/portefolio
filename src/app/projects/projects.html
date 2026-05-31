@@ -1,0 +1,27 @@
+<div class="projects-container" *ngIf="state$ | async as state">
+  <h2>Mes Projets</h2>
+  <p>Découvrez une sélection des projets sur lesquels j'ai travaillé durant ma formation et sur mon temps libre.</p>
+
+  <div *ngIf="state.loading" class="loading">Chargement des projets...</div>
+  <div *ngIf="state.error" class="error">{{ state.error }}</div>
+
+  <div *ngIf="!state.loading && !state.error" class="projects-grid">
+    <div *ngFor="let project of state.projects" class="project-card">
+      <img *ngIf="project.screenshotLink" [src]="project.screenshotLink" alt="{{ project.title }}"
+        class="project-screenshot">
+      <div class="project-header">
+        <h3>{{ project.title }}</h3>
+      </div>
+      <div *ngIf="project.technologies?.length" class="project-technologies">
+        <span *ngFor="let technology of project.technologies?.slice(0, 3)" class="technology-pill">
+          {{ technology }}
+        </span>
+      </div>
+      <p class="description">{{ project.description }}</p>
+      <div class="project-footer">
+        <a *ngIf="project.gitLink" [href]="project.gitLink" class="btn" target="_blank">GitHub</a>
+        <a [routerLink]="['/projects', project.id]" class="btn btn-secondary">Voir détails</a>
+      </div>
+    </div>
+  </div>
+</div>

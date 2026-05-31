@@ -1,0 +1,20 @@
+<div class="skills-container">
+  <h2>Mes Compétences</h2>
+  <p>Une vue d'ensemble de mes langages, frameworks et outils de travail.</p>
+
+  <ng-container *ngIf="state$ | async as state">
+    <div *ngIf="state.loading" class="loading">Chargement des compétences...</div>
+    <div *ngIf="state.error" class="error">{{ state.error }}</div>
+
+    <div *ngIf="!state.loading && !state.error" class="skills-grid">
+      <div *ngFor="let category of state.categories" class="skill-category">
+        <h3>{{ category.category }}</h3>
+        <ul>
+          <li *ngFor="let skill of category.items" class="skill-item">
+            {{ skill.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+</div>
