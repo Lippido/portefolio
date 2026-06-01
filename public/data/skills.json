@@ -1,0 +1,13 @@
+[
+  { "id": 1, "category": "Langages de Programmation", "name": "Java / C#", "sortOrder": 1 },
+  { "id": 2, "category": "Langages de Programmation", "name": "JavaScript / TypeScript", "sortOrder": 2 },
+  { "id": 3, "category": "Langages de Programmation", "name": "Python", "sortOrder": 3 },
+  { "id": 4, "category": "Langages de Programmation", "name": "HTML5 / CSS3", "sortOrder": 4 },
+  { "id": 5, "category": "Frameworks & Bibliothèques", "name": "Angular / React", "sortOrder": 1 },
+  { "id": 6, "category": "Frameworks & Bibliothèques", "name": "Spring Boot", "sortOrder": 2 },
+  { "id": 7, "category": "Frameworks & Bibliothèques", "name": "Node.js / Express", "sortOrder": 3 },
+  { "id": 8, "category": "Bases de données & Outils", "name": "MySQL / PostgreSQL", "sortOrder": 1 },
+  { "id": 9, "category": "Bases de données & Outils", "name": "MongoDB", "sortOrder": 2 },
+  { "id": 10, "category": "Bases de données & Outils", "name": "Git / GitHub / GitLab", "sortOrder": 3 },
+  { "id": 11, "category": "Bases de données & Outils", "name": "Docker", "sortOrder": 4 }
+]

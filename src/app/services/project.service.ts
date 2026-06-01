@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 
 export interface Project {
   id: number;
@@ -18,6 +18,7 @@ export interface Project {
 })
 export class ProjectService {
   private apiUrl = 'http://localhost:3000/api/projects';
+  private staticUrl = 'data/projects.json';
 
   constructor(private http: HttpClient) { }
 
@@ -25,13 +26,23 @@ export class ProjectService {
     console.log('Fetching projects from:', this.apiUrl);
     return this.http.get<Project[]>(this.apiUrl).pipe(
       tap(data => console.log('Projects loaded:', data)),
+      catchError(() => this.http.get<Project[]>(this.staticUrl)),
       catchError(this.handleError)
     );
   }
 
   getProjectById(id: number): Observable<Project> {
     console.log('Fetching project:', id);
-    return this.http.get<Project>(`${this.apiUrl}/${id}`).pipe(
+    return this.getAllProjects().pipe(
+      map(projects => {
+        const project = projects.find(item => item.id === id);
+
+        if (!project) {
+          throw new Error('Project not found');
+        }
+
+        return project;
+      }),
       tap(data => console.log('Project loaded:', data)),
       catchError(this.handleError)
     );

@@ -16,11 +16,13 @@ export interface Skill {
 })
 export class SkillService {
     private apiUrl = 'http://localhost:3000/api/skills';
+    private staticUrl = 'data/skills.json';
 
     constructor(private http: HttpClient) { }
 
     getSkills(): Observable<Skill[]> {
         return this.http.get<Skill[]>(this.apiUrl).pipe(
+            catchError(() => this.http.get<Skill[]>(this.staticUrl)),
             catchError(this.handleError)
         );
     }
