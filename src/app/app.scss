@@ -72,6 +72,8 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   .nav-links {
@@ -162,6 +164,10 @@
 
     .nav-container {
       flex-wrap: wrap;
+    }
+
+    .nav-brand {
+      display: none;
     }
 
     .hamburger {

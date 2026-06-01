@@ -14,6 +14,12 @@
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .hero-content {
@@ -46,7 +52,7 @@
   }
 
   .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     color: var(--color-primary);
     margin: 0;
     font-weight: 500;
@@ -54,7 +60,7 @@
   }
 
   .intro {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
     color: var(--color-text-light);
     line-height: 1.8;
     opacity: 0.9;
@@ -140,7 +146,7 @@
   padding: 2rem 0;
 
   .section-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     color: var(--color-text-light);
     margin-bottom: 3rem;
     text-align: center;
@@ -173,11 +179,9 @@
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: linear-gradient(
-      180deg,
-      var(--color-primary) 0%,
-      var(--color-secondary) 100%
-    );
+    background: linear-gradient(180deg,
+        var(--color-primary) 0%,
+        var(--color-secondary) 100%);
 
     @media (max-width: 768px) {
       left: 0;
