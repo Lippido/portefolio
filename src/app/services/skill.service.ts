@@ -17,12 +17,14 @@ export interface Skill {
 export class SkillService {
     private apiUrl = 'http://localhost:3000/api/skills';
     private staticUrl = 'data/skills.json';
+    private useLocalApi = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
 
     constructor(private http: HttpClient) { }
 
     getSkills(): Observable<Skill[]> {
-        return this.http.get<Skill[]>(this.apiUrl).pipe(
-            catchError(() => this.http.get<Skill[]>(this.staticUrl)),
+        const sourceUrl = this.useLocalApi ? this.apiUrl : this.staticUrl;
+
+        return this.http.get<Skill[]>(sourceUrl).pipe(
             catchError(this.handleError)
         );
     }

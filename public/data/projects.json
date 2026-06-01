@@ -1,26 +1,26 @@
 [
-  {
-    "id": 1,
-    "title": "Jeu Sérieux de Serre Connectée",
-    "description": "Développement d'un jeu sérieux en Godot utilisant C#. Création et modélisation des environnements 3D avec Blender en utilisant les Geometry Nodes pour optimiser les assets.",
-    "gitLink": null,
-    "screenshotLink": "https://via.placeholder.com/400x300?text=Jeu+Serre",
-    "technologies": []
-  },
-  {
-    "id": 2,
-    "title": "Refonte du Site BUT Project",
-    "description": "Refonte d'une plateforme de gestion de projets étudiants. Migration d'une application Django vers une architecture Django REST API pour améliorer la scalabilité et la maintenabilité.",
-    "gitLink": "https://github.com/lippido/but-project",
-    "screenshotLink": "https://via.placeholder.com/400x300?text=BUT+Project",
-    "technologies": []
-  },
-  {
-    "id": 3,
-    "title": "Site de Paris Sportif et Jeux en Ligne",
-    "description": "Développement d'une plateforme de paris sportif et jeux en ligne utilisant le framework Symfony. Gestion des utilisateurs, des paris et intégration avec des APIs de sports.",
-    "gitLink": "https://github.com/lippido/sports-betting",
-    "screenshotLink": "https://via.placeholder.com/400x300?text=Paris+Sportif",
-    "technologies": []
-  }
+    {
+        "id": 1,
+        "title": "Jeu Sérieux de Serre Connectée",
+        "description": "Développement d'un jeu sérieux en Godot utilisant C#. Création et modélisation des environnements 3D avec Blender en utilisant les Geometry Nodes pour optimiser les assets.",
+        "gitLink": null,
+        "screenshotLink": "https://via.placeholder.com/400x300?text=Jeu+Serre",
+        "technologies": []
+    },
+    {
+        "id": 2,
+        "title": "Refonte du Site BUT Project",
+        "description": "Refonte d'une plateforme de gestion de projets étudiants. Migration d'une application Django vers une architecture Django REST API pour améliorer la scalabilité et la maintenabilité.",
+        "gitLink": "https://github.com/lippido/but-project",
+        "screenshotLink": "https://via.placeholder.com/400x300?text=BUT+Project",
+        "technologies": []
+    },
+    {
+        "id": 3,
+        "title": "Site de Paris Sportif et Jeux en Ligne",
+        "description": "Développement d'une plateforme de paris sportif et jeux en ligne utilisant le framework Symfony. Gestion des utilisateurs, des paris et intégration avec des APIs de sports.",
+        "gitLink": "https://github.com/lippido/sports-betting",
+        "screenshotLink": "https://via.placeholder.com/400x300?text=Paris+Sportif",
+        "technologies": []
+    }
 ]

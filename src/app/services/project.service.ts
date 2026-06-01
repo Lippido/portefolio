@@ -19,14 +19,16 @@ export interface Project {
 export class ProjectService {
   private apiUrl = 'http://localhost:3000/api/projects';
   private staticUrl = 'data/projects.json';
+  private useLocalApi = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
 
   constructor(private http: HttpClient) { }
 
   getAllProjects(): Observable<Project[]> {
-    console.log('Fetching projects from:', this.apiUrl);
-    return this.http.get<Project[]>(this.apiUrl).pipe(
+    const sourceUrl = this.useLocalApi ? this.apiUrl : this.staticUrl;
+
+    console.log('Fetching projects from:', sourceUrl);
+    return this.http.get<Project[]>(sourceUrl).pipe(
       tap(data => console.log('Projects loaded:', data)),
-      catchError(() => this.http.get<Project[]>(this.staticUrl)),
       catchError(this.handleError)
     );
   }
