@@ -34,7 +34,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/Portefolio/",
+              "baseHref": "/portefolio/",
               "budgets": [
                 {
                   "type": "initial",
@@ -75,7 +75,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/Portefolio/",
+            "baseHref": "/portefolio/",
             "dir": "dist/portfolio/browser"
           }
         }
